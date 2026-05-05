@@ -13,8 +13,8 @@ ggplot(penguins, aes(x = body_mass, y = bill_len)) +
 
 #Graficando otras variables: relación entre isla y peso
 ggplot(penguins, aes(x = island, y = body_mass)) +
-  geom_jitter(width = 0.2, alpha = 0.2, aes(colour = sex)) + 
-  geom_boxplot(fill = "dark grey", alpha = 0.5) +
+  geom_jitter(width = 0.2, alpha = 0.3, aes(colour = sex)) + 
+  geom_boxplot(colour = "black", fill = "white", alpha = 0.5) +
   facet_wrap(~species)
 
 
