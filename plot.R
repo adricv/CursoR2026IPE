@@ -5,7 +5,8 @@ dt <- penguins
 library(ggplot2)
 
 ggplot(penguins, aes(x = body_mass, y = bill_len, colour = sex)) +
-  geom_point() + facet_wrap(~species)
+  geom_point() + facet_wrap(~species) +
+  scale_color_manual(values = c("red", "blue"))
 
 ggplot(penguins, aes(x = body_mass, y = bill_len)) + 
   geom_smooth(method = lm, aes(colour = species)) + 
