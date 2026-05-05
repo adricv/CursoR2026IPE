@@ -18,5 +18,9 @@ ggplot(penguins, aes(x = island, y = body_mass)) +
   geom_boxplot(colour = "black", fill = "white", alpha = 0.5) +
   facet_wrap(~species)
 
+# Plotting unlikely relationships (are penguins fattening or starving?)
+ggplot(penguins, aes(x = year, y = body_mass, color = species)) +
+  geom_point() +
+  geom_smooth(method = lm)
 
   
