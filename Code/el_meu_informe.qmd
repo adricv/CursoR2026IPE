@@ -1,0 +1,32 @@
+---
+title: "El meu informe"
+author: "AdriàCV"
+data: 06-05-2026
+format: typst
+---
+
+# El meu informe del dataset Nigro et al.
+
+```{r stup}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| label: "paquetes"
+library(tidyverse)
+library(here)
+```
+
+```{r dimport}
+#| echo: FALSE
+dt <- read_csv(here("Data/data_clean.csv"))
+```
+# Figures
+
+La mitjana global dels fruits és `r mean(dt$count, na.rm = TRUE)`.
+
+```{r}
+#| fig-cap: "Gràfic."
+ggplot(dt, aes(y = count, x = year)) +
+  geom_point()
+```
+
