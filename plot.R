@@ -23,4 +23,8 @@ ggplot(penguins, aes(x = year, y = body_mass, color = species)) +
   geom_point() +
   geom_smooth(method = lm)
 
-  
+library(renv) #crea una carpeta con la librería activa
+renv::init() #to set up the R dependency management
+renv::snapshot() #to update the dependency management
+renv::restore() #restaura el environment de ese proyecto. Corre el código con los paquetes
+#en la versión que tenías.
